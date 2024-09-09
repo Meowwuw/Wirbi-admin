@@ -16,7 +16,7 @@ const ColaboradoresList = () => {
   useEffect(() => {
     const fetchColaboradores = async () => {
       try {
-        const response = await axios.get('http://localhost:5000/api/colaboradores');
+        const response = await axios.get('https://wirbi-391801.uc.r.appspot.com/api/colaboradores');
         setColaboradores(response.data);
       } catch (error) {
         console.error('There was an error fetching the colaboradores!', error);
@@ -25,6 +25,7 @@ const ColaboradoresList = () => {
 
     fetchColaboradores();
   }, []);
+
 
   const handleSearch = (event) => {
     setSearchTerm(event.target.value);

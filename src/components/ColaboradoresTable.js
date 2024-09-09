@@ -6,7 +6,7 @@ const ColaboradoresTable = () => {
   const [colaboradores, setColaboradores] = useState([]);
 
   useEffect(() => {
-    axios.get('http://localhost:5000/api/colaboradores')
+    axios.get('https://wirbi-391801.uc.r.appspot.com/api/colaboradores')
       .then(response => {
         setColaboradores(response.data);
       })
@@ -14,6 +14,7 @@ const ColaboradoresTable = () => {
         console.error('There was an error fetching the colaboradores!', error);
       });
   }, []);
+
 
   return (
     <TableContainer component={Paper}>

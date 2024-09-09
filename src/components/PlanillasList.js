@@ -13,7 +13,7 @@ const PlanillasList = () => {
   useEffect(() => {
     const fetchColaboradores = async () => {
       try {
-        const response = await axios.get('http://localhost:5000/api/colaboradores');
+        const response = await axios.get('https://wirbi-391801.uc.r.appspot.com/api/colaboradores');
         console.log('Colaboradores fetched:', response.data);
         setColaboradores(response.data);
       } catch (error) {
@@ -33,7 +33,7 @@ const PlanillasList = () => {
     setSelectedColaborador(colaborador);
     try {
       console.log('Selected colaborador:', colaborador);
-      const response = await axios.get(`http://localhost:5000/api/planillas?colaboradorId=${colaborador._id}`);
+      const response = await axios.get(`https://wirbi-391801.uc.r.appspot.com/api/planillas?colaboradorId=${colaborador._id}`);
       console.log('Planillas fetched:', response.data);
       setPlanillas(response.data);
       setError(''); // Clear any previous errors
@@ -43,7 +43,7 @@ const PlanillasList = () => {
       setPlanillas([]);
       setError('Hubo un error al obtener las planillas. Inténtalo de nuevo más tarde.');
     }
-  };
+};
 
   const filteredColaboradores = colaboradores.filter((colaborador) =>
     colaborador.nombreCompleto.toLowerCase().includes(searchTerm.toLowerCase())

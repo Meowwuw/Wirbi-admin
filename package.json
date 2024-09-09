@@ -2,6 +2,7 @@
   "name": "wirbi-admin",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://storage.googleapis.com/wirbi-admin",
   "dependencies": {
     "@azure/msal-browser": "^3.18.0",
     "@azure/msal-react": "^2.0.20",
